@@ -1,0 +1,311 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.body {
+  font-family: "Poppins", sans-serif !important;
+}
+
+.intro-section {
+  @include gradient;
+  padding: 10rem 0 0 0;
+}
+
+.intros {
+  .video-box {
+    position: relative;
+    a {
+      @include absoluteCenter;
+      span {
+        i {
+          font-size: 6rem;
+          color: $black;
+          color: $secondary;
+        }
+      }
+    }
+  }
+}
+
+.border-animation {
+  position: absolute;
+  width: 6rem;
+  height: 6rem;
+  border: 0.55rem solid white;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  animation: pulse-border 1.5s linear infinite;
+
+  &--border-1 {
+    animation-delay: 1s;
+  }
+
+  &--border-2 {
+    animation-delay: 1.5s;
+  }
+}
+
+.booking-form-box {
+  max-width: 550px;
+  border: 5px solid #ced4da;
+  margin: 20px auto 0;
+  margin-bottom: 50px !important;
+  padding: 10px;
+
+  text-align: center;
+}
+
+.radio-btn {
+  margin: 0 20px;
+  width: auto;
+  padding: 5px;
+}
+
+.radio-btn .btn {
+  margin: 20px 10px 20px 0;
+  box-shadow: none;
+}
+
+.radio-btn .btn::after {
+  content: "";
+  height: 15px;
+  width: 15px;
+  top: 20px;
+  left: -100px;
+
+  background-color: #fff;
+  position: relative;
+  display: inline-block;
+  border: 3px solid #fff;
+  visibility: visible;
+  border-radius: 50%;
+}
+
+// .radio-btn .btn:checked::after {
+//   content: "";
+//   background-color: #000;
+//   transition: 0.5s;
+// }
+.contra {
+  // min-width: 500px;
+  font-family: "Poppins" !important;
+}
+
+.lab {
+  margin-top: 0.1px !important;
+  font-family: "Poppins" !important;
+}
+
+.inp {
+  transition: 0.5s;
+}
+
+.booking-form {
+  padding: 0 20px 20px;
+}
+
+.booking-form-label {
+  margin-bottom: 5px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #fff;
+}
+
+input::placeholder {
+  color: #fff !important;
+  font-family: "Poppins" !important;
+  opacity: 0.1;
+}
+
+.input-grp {
+  width: 200px;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.form-control {
+  font-size: 12px !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.select-date::--webkit-inner-spin-button,
+.select-date::--webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.select-date.select-date::--webkit-datetime-edit {
+  color: #fff !important;
+}
+
+.select-date::--webkit-calendar-picker-indicator {
+  background: transparent !important;
+}
+
+.custom-select {
+  margin-top: 20px;
+  color: #fff !important;
+  font-size: 12px !important  ;
+  border: 1px solid #ced4da !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+.custom-select option {
+  color: #333;
+}
+
+.flight {
+  width: 100%;
+  padding: 9px 0;
+  font-size: 12px;
+  border: 1px solid #cedd4d !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.flight:hover {
+  background: #fff !important;
+  color: #000 !important;
+  transition: 0.5s;
+}
+
+input,
+select,
+textarea {
+  color: #fff !important;
+}
+
+.big-banner {
+  padding-bottom: 5px;
+}
+
+
+.body {
+  font-family: "Poppins";
+}
+
+.LoginTitle {
+  font-family: "Poppins";
+}
+.error {
+  visibility: hidden;
+}
+
+.form {
+  padding: 10px;
+  margin-right: 30px;
+  font-family: "Poppins";
+}
+
+#username {
+  margin: 12px;
+  width: 200px;
+}
+
+#password {
+  margin: 12px;
+  margin-left: 17px;
+  width: 200px;
+  margin-bottom: 30px;
+}
+
+.LogINN {
+  color: white;
+  background-color: red;
+  border-radius: 3px;
+  width: 70px;
+  text-align: center;
+  margin: 2px;
+  padding: 3px;
+  text-transform: capitalize;
+  font-family: "Poppins";
+  margin-left: 35px;
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.banner .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footlog {
+  position: relative;
+  z-index: 1;
+  //   max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  top: 200px;
+  width: 100%;
+  font-family: "Poppins";
+}
+
+.gender {
+  margin-left: -70px;
+  margin-right: 10px;
+}
+
+.gender select {
+  height: 25px;
+}
+
+.agen {
+  position: relative;
+  display: inline-block;
+}
+
+.age input {
+  width: 45px;
+  text-align: left;
+  float: left;
+  position: absolute;
+  top: 3px;
+  left: 140px;
+  height: 31px;
+  margin-top: 2px;
+}
+
+.er {
+  margin-bottom: 0px;
+}
+
+.userbox {
+  position: relative;
+}
+
+.phone {
+  display: inline-block;
+}
+
+.form-control {
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+.ur {
+  font-family: "Poppins", sans-serif !important;
+}

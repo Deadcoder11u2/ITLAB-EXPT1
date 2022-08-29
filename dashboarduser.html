@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <title>Dashboard</title>
+</head>
+
+<body style='background-color: blueviolet; font-family: "poppins";'>
+    <nav class="navbar navbar-expand-md navbar-light menu shadow sticky-top navbar-default navbar-static-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img style="max-width: 100px; margin: -5px; min-width: 5em;"
+                    src="images/dbms/logo.png" alt="logo image"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav text-center">
+                    <li class="nav-item"><a class="nav-link" href="#services">About
+                            Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#FAQ">FAQ</a></li>
+
+                </ul>
+                <div class="dropdown">
+                    <button type="button" id="dropDownSupport" data-bs-toggle="dropdown"
+                        class="rounded-pill btn-rounded dropdown-toggle">
+                        <span><i class="fas fa-headset caret"></i></span>Support
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropDownSupport">
+                        <ul>
+                            <span><i class="far fa-envelope supp_log"></i>
+
+                                <li>srikanth@d2airlines.com</li>
+                                <li>rahul@d2airlines.com</li>
+                                <li>ayush@d2airlines.com</li>
+                        </ul>
+                        <span><i class="fas fa-phone-alt supp_log"></i>
+
+                            <li>022-45612389</li>
+                    </ul>
+
+                    </ul>
+                </div>
+                <div>
+                    <button class="REG">REGISTER/LOGIN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div style="margin-top: 30px;">
+        <div>
+            <!-- <label class="text-white custom-container fw-bold">First Name</label>
+            <h5 th:text="${user.firstName}" class="text-white">Srikanth</h5><br>
+            <label class="text-white fw-bold custom-container">Last Name</label>
+            <h5 th:text="${user.lastName}" class="text-white">Iyengar</h5><br>
+            <label class="text-white fw-bold custom-container">Email</label>
+             <h5 th:text="${user.email}" class="text-white bg-dark" style="width: 0px;">ksrikanth3012@gmail.com</h5><br> -->
+            <table class="table table-striped table-hover table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col">First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>Srikanth</td>
+                    <td>Iyengar</td>
+                    <td>ksrikanth3012@gmail.com</td>
+                    <td>9653233005</td>
+                </tr>
+            </table>
+        </div>
+
+        <h1 class="text-center mt-5 mb-5 PassDet">All Booked Flight Tickets</h1>
+
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Booking Date</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Booking Id</th>
+                    <th scope="col">Payment Mode</th>
+                </tr>
+            </thead>
+            <tbody id="tickets">
+
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="text-center">
+        <h1 class="text-white">Query Form</h1>
+        <div>
+            <div class="text-white">
+                <input type="text" class="text-black" style="background-color: white;" id="description">
+            </div>
+            <br>
+            <div>
+                <button class="btn btn-success" type="button" id="query"> SUBMIT</button>
+            </div>
+        </div>
+
+        <h1 class="text-white">Cancel Form</h1>
+        <div>
+            <div class="text-white">
+                <input type="text" class="text-black" style="background-color: white;" id="bookingid"
+                    placeholder="Enter Booking ID">
+            </div>
+            <br>
+            <div>
+                <button class="btn btn-success" type="button" id="cancel"> CANCEL</button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer footer2 text-white" style="background-color: #212121;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+                    <div class="contact-box__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-call"
+                            viewBox="0 0 24 24" stroke-width="1" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                            <path d="M15 7a2 2 0 0 1 2 2" />
+                            <path d="M15 3a6 6 0 0 1 6 6" />
+                        </svg>
+                    </div>
+                    <div class="contact-box__info">
+                        <a href="#" class="cbit">022-45612389</a>
+                        <p class="cbs" style="color:gray !important;"> Mon-Fri 9am-6pm</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+                    <div class="contact-box__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail-opened"
+                            viewBox="0 0 24 24" stroke-width="1" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <polyline points="3 9 12 15 21 9 12 3 3 9" />
+                            <path d="M21 9v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+                            <line x1="3" y1="19" x2="9" y2="13" />
+                            <line x1="15" y1="13" x2="21" y2="19" />
+                        </svg>
+                    </div>
+                    <div class="contact-box__info">
+                        <a href="#" class="cbit">info@d2airlines.com</a>
+                        <p class="contact-box__info--subtitle" style="color:gray !important;">E-mail</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+                    <div class="contact-box__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-2"
+                            viewBox="0 0 24 24" stroke-width="1" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <line x1="18" y1="6" x2="18" y2="6.01" />
+                            <path d="M18 13l-3.5 -5a4 4 0 1 1 7 0l-3.5 5" />
+                            <polyline points="10.5 4.75 9 4 3 7 3 20 9 17 15 20 21 17 21 15" />
+                            <line x1="9" y1="4" x2="9" y2="17" />
+                            <line x1="15" y1="15" x2="15" y2="20" />
+                        </svg>
+                    </div>
+                    <div class="contact-box__info">
+                        <a href="#" class="cbit">Mumbai, IN</a>
+                        <p class="contact-box__info--subtitle" style="color:gray !important;">Headquarters</p>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+
+        <!-- Copyright -->
+        <div class="text-center p-3 text-white" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2021 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">D2 Airlines</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    <script>
+        const tickets = [
+            {
+                "booking_date": "28-09-2022",
+                "price": "2000",
+                "id": "1237951271239",
+                "mode": "UPI",
+                "active": true
+            },
+            {
+                "booking_date": "28-09-2022",
+                "price": "10000",
+                "id": "1237951271238",
+                "mode": "IMPS",
+                "active": true
+            },
+            {
+                "booking_date": "28-09-2022",
+                "price": "5000",
+                "id": "1237951271237",
+                "mode": "NET BANKING",
+                "active": true
+            },
+            {
+                "booking_date": "28-09-2022",
+                "price": "3000",
+                "id": "1237951271236",
+                "mode": "NEFT",
+                "active": true
+            },
+        ]
+        $(document).ready(() => {
+            for (var i = 0; i < tickets.length; i++) {
+                if (!tickets[i]["active"]) continue
+                $("#tickets").append(
+                    `
+                    <tr id="${tickets[i]["id"]}">
+                        <td>${tickets[i]["booking_date"]}</td>
+                        <td>₹${tickets[i]["price"]}</td>
+                        <td>${tickets[i]["id"]}</td>
+                        <td>${tickets[i]["mode"]}</td>
+                    </tr>
+                    `
+                )
+            }
+            $(`#query`).click(() => {
+                var dp = $(`#description`).val();
+
+                var pathname = "/user/query";
+
+                $.ajax({
+                    method: "post",
+                    url: pathname,
+                    data: JSON.stringify({
+                        query: dp
+                    }),
+                    dataType: 'json',
+                    contentType: "application/json",
+                    success: (data) => {
+                    }
+                },
+                    (data, status) => {
+                        alert(`${data} - ${status}`)
+                    });
+                alert("Query submitted Succesfully\n" + "Query:" + dp);
+            });
+            $(`#cancel`).click(() => {
+                var id = $(`#bookingid`).val();
+                // var url = "/user/cancel/" + id;
+                // $(location).attr('href', url);
+                // alert("Please Confirm that you want to cancel this ticket")
+                for (var i = 0; i < tickets.length; i++) {
+                    if (tickets[i]["id"] == id) {
+                        console.log(tickets[i])
+                        tickets[i]["active"] = false
+                        $('#' + id).remove()
+                        return
+                    }
+                }
+                alert("Ticket not exists")
+            });
+
+            $(`#show`).click(() => {
+                var id = $(`#showid`).val();
+                var url = "/user/dashboard/show/" + id;
+                $(location).attr('href', url);
+            });
+        });
+    </script>
+</body>
+
+</html>

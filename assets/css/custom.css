@@ -1,0 +1,16 @@
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: rgba(171, 69, 211, 0.788);
+ }
+
+
+.custom-container {
+  background-color: #480e7f;
+}
+
+.table td {
+  text-align: center;
+}
+.table th {
+  text-align: center;
+}
