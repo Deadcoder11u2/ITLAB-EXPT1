@@ -11498,8 +11498,8 @@ textarea {
 }
 
 .gg {
-  color: black;
-  background-color: blueviolet !important;
+  color: white;
+  background-color: #611ff0 !important;
   height: 32px;
   border-radius: 0px;
   font-size: 12px;
@@ -11528,6 +11528,8 @@ textarea {
 
 .payment {
   text-align: center !important;
+  background-color: #611ff0;
+  color: "white";;
 }
 
 #mode {

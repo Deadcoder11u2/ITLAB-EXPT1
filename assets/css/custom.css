@@ -1,8 +1,8 @@
 .table-striped>tbody>tr:nth-child(odd)>td, 
 .table-striped>tbody>tr:nth-child(odd)>th {
-   background-color: rgba(171, 69, 211, 0.788);
- }
-
+  background-color: #611ff0;
+  color: white;
+}
 
 .custom-container {
   background-color: #480e7f;

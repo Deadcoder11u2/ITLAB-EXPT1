@@ -19,7 +19,7 @@
     <title>Dashboard</title>
 </head>
 
-<body style='background-color: blueviolet; font-family: "poppins";'>
+<body style='background-color: #611ff0; font-family: "poppins";'>
     <nav class="navbar navbar-expand-md navbar-light menu shadow sticky-top navbar-default navbar-static-top">
         <div class="container">
             <a class="navbar-brand" href="#"><img style="max-width: 100px; margin: -5px; min-width: 5em;"
@@ -69,7 +69,7 @@
             <h5 th:text="${user.lastName}" class="text-white">Iyengar</h5><br>
             <label class="text-white fw-bold custom-container">Email</label>
              <h5 th:text="${user.email}" class="text-white bg-dark" style="width: 0px;">ksrikanth3012@gmail.com</h5><br> -->
-            <table class="table table-striped table-hover table-borderless">
+            <table class="table table-striped table-hover table-borderless text-white">
                 <thead>
                     <tr>
                         <th scope="col">First Name</th>
@@ -87,9 +87,9 @@
             </table>
         </div>
 
-        <h1 class="text-center mt-5 mb-5 PassDet">All Booked Flight Tickets</h1>
+        <h1 class="text-center mt-5 mb-5 PassDet text-white">All Booked Flight Tickets</h1>
 
-        <table class="table table-striped table-hover">
+        <table class="table table-striped table-hover text-white">
             <thead>
                 <tr>
                     <th scope="col">Booking Date</th>
@@ -109,18 +109,7 @@
     <br>
 
     <div class="text-center">
-        <h1 class="text-white">Query Form</h1>
-        <div>
-            <div class="text-white">
-                <input type="text" class="text-black" style="background-color: white;" id="description">
-            </div>
-            <br>
-            <div>
-                <button class="btn btn-success" type="button" id="query"> SUBMIT</button>
-            </div>
-        </div>
-
-        <h1 class="text-white">Cancel Form</h1>
+        <h1 class="text-white">Cancel Ticket</h1>
         <div>
             <div class="text-white">
                 <input type="text" class="text-black" style="background-color: white;" id="bookingid"
